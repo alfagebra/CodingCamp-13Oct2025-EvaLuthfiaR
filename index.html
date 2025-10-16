@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List - Eva</title>
+    <!-- CSS External File-->
+    <link rel="stylesheet" href="/CSS/style.css">
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1 class="text-3xl font-bold">Todo List</h1>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <section class="todo-app">
+            <input class="border-rounded" type="text" id="todo-input" placeholder="Add a new task...">
+            <input class="border-rounded" type="date" name="todo-date" id="todo-date" placeholder="Select due date">
+            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" id="add-todo-button" onclick="addTask()">Add</button>
+        </section>
+
+        <section class="flex justify-between my-4">
+            <button class="bg-gray-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="filter-button">Filter</button>
+            <button class="bg-blue-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" id="delete-all-task">Delete All Task</button>
+        </section>
+
+        <section>
+            <h2>List of Task</h2>
+            <ul id="task-list">
+                <li>No tasks added yet</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 To do List - Eva. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript External File -->
+    <script src="/js/script.js"></script>
+</body>
+</html>
