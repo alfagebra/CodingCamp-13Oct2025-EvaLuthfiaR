@@ -1,47 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To do List - Eva</title>
-    <!-- CSS External File-->
-    <link rel="stylesheet" href="/CSS/style.css">
-    <!-- Tailwind CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List - Eva</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-    <!-- Header Section -->
-    <header>
-        <h1 class="text-3xl font-bold">Todo List</h1>
-    </header>
 
-    <!-- Main Section -->
-    <main>
-        <section class="todo-app">
-            <input class="border-rounded" type="text" id="todo-input" placeholder="Add a new task...">
-            <input class="border-rounded" type="date" name="todo-date" id="todo-date" placeholder="Select due date">
-            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" id="add-todo-button" onclick="addTask()">Add</button>
-        </section>
+  <!-- Todo List Card -->
+  <main class="w-full max-w-2xl border border-[#334155]">
+    <h1 class="text-3xl font-bold text-center text-gray-100 mb-6">Todo List</h1>
 
-        <section class="flex justify-between my-4">
-            <button class="bg-gray-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="filter-button">Filter</button>
-            <button class="bg-blue-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" id="delete-all-task">Delete All Task</button>
-        </section>
+     <!-- Input Section -->
+    <div class="flex flex-col sm:flex-row gap-3 mb-5">
+      <input type="text" id="todo-input" placeholder="Add a todo..."
+        class="flex-1 p-2 rounded-lg bg-[#334155] text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+      <input type="date" id="todo-date"
+        class="p-2 rounded-lg bg-[#334155] text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+      <button id="add-btn"
+        class="bg-indigo-500 hover:bg-indigo-600 transition text-white rounded-lg px-4 py-2 font-bold text-lg">+</button>
+    </div>
 
-        <section>
-            <h2>List of Task</h2>
-            <ul id="task-list">
-                <li>No tasks added yet</li>
-            </ul>
-        </section>
-    </main>
+    <div class="flex justify-between mb-6 items-center">
+    <div class="flex gap-2 items-center">
+        <button id="filter-btn"
+        class="bg-[#475569] hover:bg-indigo-500 transition rounded-lg px-4 py-2 font-semibold text-gray-200 flex items-center gap-2">
+        FILTER
+        </button>
+        <!-- Sort Icon Button -->
+        <button id="sort-btn" title="Sort by Due Date"
+        class="bg-[#475569] hover:bg-indigo-500 transition rounded-lg p-2 text-gray-200">
+        &#x21C5;
+        </button>
+    </div>
+    <button id="delete-all-btn"
+        class="bg-[#6366f1] hover:bg-indigo-600 transition rounded-lg px-4 py-2 font-semibold text-white">
+        DELETE ALL
+    </button>
+    </div>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 To do List - Eva. All rights reserved.</p>
+    <!-- Table Section -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border-collapse rounded-lg overflow-hidden">
+        <thead>
+          <tr class="bg-[#334155] text-gray-200 uppercase text-sm">
+            <th class="p-3">Task</th>
+            <th class="p-3">Due Date</th>
+            <th class="p-3">Status</th>
+            <th class="p-3">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="task-list" class="bg-[#1e293b] text-gray-300 text-sm">
+          <tr>
+            <td colspan="4" class="text-center py-4 italic text-gray-500">No task found</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+      <!-- Footer -->
+    <footer class="mt-6 text-center text-gray-400 text-sm mb-4">
+      &copy; 2025 To do List - Eva. All rights reserved
     </footer>
 
-    <!-- JavaScript External File -->
-    <script src="/js/script.js"></script>
+  </main>
+
+  <!-- External Script -->
+  <script src="js/script.js"></script>
 </body>
 </html>
